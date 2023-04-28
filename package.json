@@ -1,0 +1,19 @@
+{
+  "name": "rohit_samaaj_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Vr3n/rohit-samaaj-app.git",
+  "author": "Vr3n <vickyspatel@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn tailwindcss -i ./static/css/styles.css -o ./static/css/output.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1"
+  },
+  "dependencies": {
+    "flowbite": "^1.6.4"
+  }
+}

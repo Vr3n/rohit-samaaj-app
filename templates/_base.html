@@ -1,0 +1,60 @@
+{% load compress %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+
+    <!-- Links -->
+    {% include 'partials/head.html' %}
+  </head>
+  <body hx-headers='{"X-CSRFTOKEN": "{{ csrf_token }}"}'>
+    <div class="flex-col">
+      <!-- Header -->
+      {% include "partials/navbar.html" %}
+      <!-- end Header -->
+      <div class="flex gap-5">
+        <!-- Sidebar -->
+        {% include "partials/sidebar.html" %}
+        <!-- end sidebar -->
+
+        <!-- main content -->
+        <main class="mt-5">{% block content %} {% endblock content %}</main>
+        <!-- main content -->
+      </div>
+    </div>
+
+    <!-- Js scripts -->
+    {% include 'partials/scripts.html' %}
+    <!-- end Js scripts -->
+    <!-- Sweet alert notification script. -->
+    <script>
+      {% if messages %}
+            {% for message in messages %}
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 5000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                  icon: '{{ message.level_tag|safe }}',
+                  title: '{{ message|safe }}'
+                })
+            {% endfor %}
+        {% endif %}
+    </script>
+    
+    {% block custom_javascript %}
+      
+    {% endblock custom_javascript %}
+      
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{% load compress %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'vendors/sweetalert2/sweetalert2.min.css' %}" />
+
+{% compress css %}
+<link rel="stylesheet" href="{% static 'css/output.css' %}" />
+{% endcompress %}
