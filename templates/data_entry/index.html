@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohit Samaaj Data Entry</title>
+
+    <!-- CSS links -->
+    {% include 'partials/head.html' %}
+  </head>
+  <body hx-headers='{ "X-CSRFTOKEN": "{{ csrf_token }}" }'>
+    <h1 class="text-2xl text-center my-4">Rohit Samaaj Data Entry</h1>
+    <main class="px-6">
+      <div class="grid max-w-5xl mx-auto gap-3 grid-cols-1 justify-center md:gap-6 md:grid-cols-3">
+        <!-- Member Details box -->
+        <div
+          class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg mb-4 shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <h6 class="text-lg font-semibold mb-3">Member Details</h6>
+          <form action="">
+            <div class="mb-3">
+              <label
+                for="first_name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >First Name</label
+              >
+              <input
+                type="first_name"
+                name="first_name"
+                id="first_name"
+                {% if form.first_name.value %}
+                  value="{{ form.first_name.value }}"
+                {% endif %}
+                {% if form.first_name.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.first_name.errors %}
+                {% for error in form.first_name.errors %}
+                  <p id="first_name_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="middle_name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Father / Husband Name</label
+              >
+              <input
+                type="middle_name"
+                name="middle_name"
+                id="middle_name"
+                {% if form.middle_name.value %}
+                  value="{{ form.middle_name.value }}"
+                {% endif %}
+                {% if form.middle_name.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.middle_name.errors %}
+                {% for error in form.middle_name.errors %}
+                  <p id="middle_name_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="mother_name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Mothers Name</label
+              >
+              <input
+                type="mother_name"
+                name="mother_name"
+                id="mother_name"
+                {% if form.mother_name.value %}
+                  value="{{ form.mother_name.value }}"
+                {% endif %}
+                {% if form.mother_name.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.mother_name.errors %}
+                {% for error in form.mother_name.errors %}
+                  <p id="mother_name_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="last_name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Last Name</label
+              >
+              <input
+                type="last_name"
+                name="last_name"
+                id="last_name"
+                {% if form.last_name.value %}
+                  value="{{ form.last_name.value }}"
+                {% endif %}
+                {% if form.last_name.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.last_name.errors %}
+                {% for error in form.last_name.errors %}
+                  <p id="last_name_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Recent Photograh (Passport size or Portrait)</label>
+              <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:shadow-md  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" accept="image/" capture="user" type="file">
+              <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">(Only Your photo allowed) Use camera or Upload your existing photo.</p>
+            </div>
+          </form>
+        </div>
+        <!-- Member Details box -->
+        <!-- Member Address box -->
+        <div
+          class="w-full max-w-sm p-4  mb-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <h6 class="text-lg font-semibold mb-3">Member Contact</h6>
+          <form action="">
+            <div class="mb-3">
+              <label
+                for="mobile_number"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Mobile Number</label
+              >
+              <input
+                type="mobile_number"
+                name="mobile_number"
+                id="mobile_number"
+                {% if form.mobile_number.value %}
+                  value="{{ form.mobile_number.value }}"
+                {% endif %}
+                {% if form.mobile_number.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              <div class="flex items-center mt-4 gap-4 mb-4">
+                <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Is Whatsapp?</label>
+                <input id="is_whatsapp" type="checkbox" name="is_whatsapp" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              </div>
+              {% if form.mobile_number.errors %}
+                {% for error in form.mobile_number.errors %}
+                  <p id="mobile_number_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="email_id"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Email Address</label
+              >
+              <input
+                type="email_id"
+                name="email_id"
+                id="email_id"
+                {% if form.email_id.value %}
+                  value="{{ form.email_id.value }}"
+                {% endif %}
+                {% if form.email_id.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.email_id.errors %}
+                {% for error in form.email_id.errors %}
+                  <p id="email_id_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+          </form>
+        </div>
+        <!-- Member Address box -->
+        <!-- Member Address box -->
+        <div
+          class="w-full max-w-sm p-4  mb-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <h6 class="text-lg font-semibold mb-3">Member Current Address</h6>
+          <form action="">
+            <div class="mb-3">
+              <label
+                for="flat_no_bldg"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Flat No. & Building</label
+              >
+              <input
+                type="flat_no_bldg"
+                name="flat_no_bldg"
+                id="flat_no_bldg"
+                {% if form.flat_no_bldg.value %}
+                  value="{{ form.flat_no_bldg.value }}"
+                {% endif %}
+                {% if form.flat_no_bldg.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.flat_no_bldg.errors %}
+                {% for error in form.flat_no_bldg.errors %}
+                  <p id="flat_no_bldg_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="landmark"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >LandMark</label
+              >
+              <input
+                type="landmark"
+                name="landmark"
+                id="landmark"
+                {% if form.landmark.value %}
+                  value="{{ form.landmark.value }}"
+                {% endif %}
+                {% if form.landmark.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.landmark.errors %}
+                {% for error in form.landmark.errors %}
+                  <p id="landmark_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="area"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Area</label
+              >
+              <input
+                type="area"
+                name="area"
+                id="area"
+                {% if form.area.value %}
+                  value="{{ form.area.value }}"
+                {% endif %}
+                {% if form.area.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.area.errors %}
+                {% for error in form.area.errors %}
+                  <p id="area_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="country"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Country</label
+              >
+              <input
+                type="country"
+                name="country"
+                id="country"
+                {% if form.country.value %}
+                  value="{{ form.country.value }}"
+                {% endif %}
+                {% if form.country.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.country.errors %}
+                {% for error in form.country.errors %}
+                  <p id="country_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="state"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >State</label
+              >
+              <input
+                type="state"
+                name="state"
+                id="state"
+                {% if form.state.value %}
+                  value="{{ form.state.value }}"
+                {% endif %}
+                {% if form.state.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.state.errors %}
+                {% for error in form.state.errors %}
+                  <p id="state_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="district"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >District</label
+              >
+              <input
+                type="district"
+                name="district"
+                id="district"
+                {% if form.district.value %}
+                  value="{{ form.district.value }}"
+                {% endif %}
+                {% if form.district.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.district.errors %}
+                {% for error in form.district.errors %}
+                  <p id="district_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="taluka"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Taluka / Tahsil</label
+              >
+              <input
+                type="taluka"
+                name="taluka"
+                id="taluka"
+                {% if form.taluka.value %}
+                  value="{{ form.taluka.value }}"
+                {% endif %}
+                {% if form.taluka.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.taluka.errors %}
+                {% for error in form.taluka.errors %}
+                  <p id="taluka_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label
+                for="city"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >City</label
+              >
+              <input
+                type="city"
+                name="city"
+                id="city"
+                {% if form.city.value %}
+                  value="{{ form.city.value }}"
+                {% endif %}
+                {% if form.city.errors %}
+                  class="bg-secondary-50 border border-secondary-300 text-gray-900 sm:text-sm rounded-lg focus:ring-secondary-600 focus:border-secondary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% else %}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {% endif %}
+                required=""
+              />
+              {% if form.city.errors %}
+                {% for error in form.city.errors %}
+                  <p id="city_error" class="mt-2 text-sm text-secondary-500 dark:text-secondary-400">{{ error.message }}</p>
+                {% endfor %}
+              {% endif %}
+            </div>
+          </form>
+        </div>
+        <!-- Member Address box -->
+        <button
+          type="submit"
+          class="mb-4 row-span-1 w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+        >Submit</button>
+      </div>
+    </main>
+
+    <!-- Js scripts -->
+    {% include 'partials/scripts.html' %}
+    <!-- end Js scripts -->
+    <!-- Sweet alert notification script. -->
+    <script>
+      {% if messages %}
+            {% for message in messages %}
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 5000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                  icon: '{{ message.level_tag|safe }}',
+                  title: '{{ message|safe }}'
+                })
+            {% endfor %}
+        {% endif %}
+    </script>
+  </body>
+</html>
